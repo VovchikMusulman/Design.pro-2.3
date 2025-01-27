@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}View Categories{% endblock %}
+
+{% block content %}
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h2 class="active">All Categories</h2>
+    <a href="{% url 'create_category' %}" class="underlineHover">Create New Category</a>
+    {% if categories %}
+      <ul>
+        {% for category in categories %}
+          <li>
+            {{ category.name }}
+            <a href="{% url 'edit_category' category.id %}" class="underlineHover">Edit</a>
+            <a href="{% url 'delete_category' category.id %}" class="underlineHover">Delete</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No categories found.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

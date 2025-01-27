@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Category{% endblock %}
+
+{% block content %}
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h2 class="active">Edit Category</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="fadeIn fourth" value="Update Category">
+    </form>
+  </div>
+</div>
+{% endblock %}

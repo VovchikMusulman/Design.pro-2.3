@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}View Requests{% endblock %}
+
+{% block content %}
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h2 class="active">Your Requests</h2>
+    {% if requests %}
+      <div class="requests-list">
+        {% for request in requests %}
+          <div class="request-item">
+            <h3>{{ request.title }}</h3>
+            <p><strong>Description:</strong> {{ request.description }}</p>
+            <p><strong>Category:</strong> {{ request.category.name }}</p>
+            <p><strong>Status:</strong> {{ request.status }}</p>
+            <p><strong>Created at:</strong> {{ request.created_at }}</p>
+            {% if request.image %}
+              <img src="{{ request.image.url }}" alt="Request Image" class="request-image">
+            {% endif %}
+            {% if request.status == 'Новая' %}
+              <a href="{% url 'delete_request' request.id %}" class="underlineHover">Delete</a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No requests found.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

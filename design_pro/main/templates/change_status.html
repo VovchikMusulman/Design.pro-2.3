@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Change Status{% endblock %}
+
+{% block content %}
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h2 class="active">Change Status for {{ request.title }}</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="fadeIn fourth" value="Change Status">
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h2 class="active">Completed Requests</h2>
+    {% if completed_requests %}
+      <div class="requests-list">
+        {% for request in completed_requests %}
+          <div class="request-item">
+            <h3>{{ request.title }}</h3>
+            <p><strong>Created at:</strong> {{ request.created_at }}</p>
+            <p><strong>Category:</strong> {{ request.category.name }}</p>
+            {% if request.image %}
+              <img src="{{ request.image.url }}" alt="Request Image" class="request-image">
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No completed requests found.</p>
+    {% endif %}
+
+    <h2 class="active">Accepted Requests Count</h2>
+    <p>{{ accepted_requests_count }} requests are in progress.</p>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Request{% endblock %}
+
+{% block content %}
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h2 class="active">Create Request</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="fadeIn fourth" value="Create Request">
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/* BASIC */
+
+html {
+  background-image: url('../img/musulman_Generate.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  color: red;
+}
+
+.description{
+  margin-top: 150px;
+  text-align: center;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+/* STRUCTURE */
+
+header {
+  background-color: #333;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: red;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* FORM STYLES */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+#formContent {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: fit-content;
+}
+
+#formContent h2 {
+  margin-bottom: 20px;
+}
+
+#formContent form {
+  display: flex;
+  flex-direction: column;
+  justify-content: spase-between;
+}
+
+#formContent input {
+  width: 100%;
+}
+
+#formContent p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#formContent input[type="text"],
+#formContent input[type="password"],
+#formContent input[type="email"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#formContent input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#formContent input[type="submit"]:hover {
+  background-color: #555;
+}
+
+#formFooter {
+  margin-top: 20px;
+}
+
+#formFooter a {
+  color: #333;
+  text-decoration: none;
+}
+
+#formFooter a:hover {
+  text-decoration: underline;
+}
+
+/* ANIMATIONS */
+
+.fadeInDown {
+  animation: fadeInDown 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn.first {
+  animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  animation-delay: 1s;
+}
+
+/* UNDERLINE HOVER */
+
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #333;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #333;
+}
+
+.underlineHover:hover:after {
+  width: 100%;
+}
+
+/* MESSAGES STYLES */
+
+.messages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.messages li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.messages li.success {
+    background-color: #4CAF50;
+}
+
+.messages li.error {
+    background-color: #f44336;
+}
+
+/* REQUESTS STYLES */
+
+.requests-list {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.request-item {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  text-align: center;
+}
+
+.request-item h3 {
+  margin-top: 0;
+}
+
+.request-item p {
+  margin: 5px 0;
+}
+
+.request-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.underlineHover {
+  display: inline-block;
+  margin-top: 10px;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+}
+
+.underlineHover:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.underlineHover:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
